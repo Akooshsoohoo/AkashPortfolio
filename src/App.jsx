@@ -222,7 +222,7 @@ function ProjectCard({ project, index }) {
           ))}
         </div>
         <div className="card-links">
-          <Link className="button primary" to={`/projects/${project.slug}`}>Case study</Link>
+          <Link className="button primary read-more" to={`/projects/${project.slug}`}>Read more</Link>
           {project.links.slice(0, 1).map((link) => (
             <ExternalLink key={link.label} href={link.href}>{link.label}</ExternalLink>
           ))}
