@@ -4,8 +4,8 @@ import { Link, Navigate, Route, Routes, useParams } from "react-router-dom";
 const profile = {
   name: "Akash Saha",
   github: "https://github.com/Akooshsoohoo",
-  linkedin: "#replace-with-linkedin-url",
-  resume: "#replace-with-resume-url",
+  linkedin: "https://www.linkedin.com/in/akash-saha5111/",
+  resume: "/Akash-Saha-Resume.pdf",
   avatar: "https://avatars.githubusercontent.com/u/152564278?v=4",
 };
 
@@ -19,15 +19,15 @@ const projects = [
     tech: ["Tauri", "React", "TypeScript", "SQLite", "Zustand"],
     links: [{ label: "GitHub", href: "https://github.com/Akooshsoohoo/EverythingApp" }],
     summary:
-      "A local-first desktop productivity app for daily planning, focus sessions, notes, stats, modules, and personal operating systems.",
+      "A desktop productivity app for planning, timers, notes, stats, and small personal workflow tools.",
     problem:
-      "Most productivity tools split planning, timing, tracking, and notes across separate apps. EverythingApp explores what a focused personal command center can look like when those workflows live in one local desktop app.",
+      "I wanted one local app for the daily tools I kept rebuilding or tracking separately: planning, timing, notes, and small utilities.",
     built:
-      "I built the app around a modular Tauri and React architecture, with local persistence, session recovery, global shortcuts, settings, notes, timers, Spotify controls, and standalone feature modules.",
+      "I built a Tauri and React app with local data storage, session recovery, global shortcuts, settings, notes, timers, Spotify controls, and separate feature modules.",
     highlights: [
-      "Designed modular feature boundaries so new tools can be added without rewriting the core shell.",
-      "Implemented local SQLite-backed persistence for personal data and app state.",
-      "Built daily planning, timer, notes, stats, shortcuts, and module workflows around repeated personal use.",
+      "Built a modular structure so new tools can be added without changing the main app shell.",
+      "Used SQLite for local persistence and app state.",
+      "Added planning, timer, notes, stats, shortcuts, and module workflows.",
     ],
     screenshots: ["Command center", "Timer workflow", "Module dashboard"],
   },
@@ -40,15 +40,15 @@ const projects = [
     tech: ["Python", "Flask", "OpenAI API", "Pandas", "CSV"],
     links: [{ label: "GitHub", href: "https://github.com/Akooshsoohoo/GymLLM" }],
     summary:
-      "A browser-based workout logger that turns plain-English gym entries into structured, searchable workout history.",
+      "A workout logger that turns plain-English gym notes into structured workout history.",
     problem:
-      "Workout logging is useful, but manual entry gets tedious fast. GymLLM is built around the idea that users should be able to write naturally and still end up with clean structured exercise data.",
+      "Manual workout logging is slow. I wanted to write a workout naturally and still save clean exercise data.",
     built:
-      "I built a Flask workflow that parses free-form workout text, normalizes exercises against local data, and lets the user review results before saving them.",
+      "I built a Flask app that parses workout text, normalizes exercises against local data, and lets the user review results before saving.",
     highlights: [
-      "Added a review-and-confirm step so AI output remains editable and user-controlled.",
-      "Kept workout history and exercise data local by default.",
-      "Used structured CSV and Pandas workflows to keep saved sessions searchable and analyzable.",
+      "Added a review step so parsed workouts can be edited before saving.",
+      "Kept workout history and exercise data local.",
+      "Used CSV and Pandas workflows to keep sessions searchable.",
     ],
     screenshots: ["Workout entry", "Review parsed sets", "Exercise history"],
   },
@@ -65,15 +65,15 @@ const projects = [
       { label: "Video", href: "https://www.youtube.com/watch?v=Unw3EFVc13o" },
     ],
     summary:
-      "A dashboard that turns Google Photos Takeout metadata into SQL analysis, visual charts, clustering, and personal behavior insights.",
+      "A dashboard for analyzing Google Photos Takeout metadata with SQL, charts, and clustering.",
     problem:
-      "Google Photos Takeout exports are rich but hard to understand directly. PhotoLog Analytics makes the archive inspectable through data cleaning, storage, analysis, and visualization.",
+      "Google Photos Takeout exports contain useful metadata, but the raw files are hard to inspect or analyze directly.",
     built:
-      "I built an end-to-end data pipeline from JSON sidecars into SQLite, generated analysis outputs, added chart-ready data, and presented the results through a Flask dashboard.",
+      "I built a pipeline that loads JSON sidecars into SQLite, generates analysis outputs, and displays them in a Flask dashboard.",
     highlights: [
-      "Converted raw export metadata into a queryable SQLite-backed dataset.",
-      "Presented behavior patterns across time, media type, seasonality, and photo-taking habits.",
-      "Added ML-style clustering and analysis views to surface patterns that are not obvious from raw files.",
+      "Converted raw export metadata into a queryable SQLite dataset.",
+      "Built charts for time, media type, seasonality, and photo-taking patterns.",
+      "Added clustering and analysis views for higher-level patterns.",
     ],
     screenshots: ["Dashboard overview", "Timeline charts", "Cluster analysis"],
   },
@@ -86,15 +86,15 @@ const projects = [
     tech: ["JavaScript", "Chrome Extensions", "HTML", "CSS", "Local storage"],
     links: [{ label: "GitHub", href: "https://github.com/Akooshsoohoo/Scratch-Paper-1.2" }],
     summary:
-      "A lightweight browser notepad for quick notes, multiple pages, autosave, settings, and persistent extension storage.",
+      "A Chrome extension for quick notes with pages, autosave, settings, and local browser storage.",
     problem:
-      "Quick notes often happen while browsing, but opening a full notes app breaks flow. Scratch Paper keeps a small persistent writing surface directly in the browser.",
+      "I wanted a small note tool available from the browser without opening a separate notes app.",
     built:
-      "I built a Chrome extension popup with note pages, autosave, customization settings, and local browser storage.",
+      "I built a Chrome extension popup with note pages, autosave, customization settings, and persistent storage.",
     highlights: [
-      "Created a fast popup workflow for capturing notes without leaving the current tab.",
+      "Created a popup workflow for notes without leaving the current tab.",
       "Added customization for titles, fonts, background color, and page management.",
-      "Used extension storage to persist notes across browser sessions.",
+      "Used extension storage so notes persist across browser sessions.",
     ],
     screenshots: ["Extension popup", "Page controls", "Customization settings"],
   },
@@ -107,15 +107,15 @@ const projects = [
     tech: ["Python", "Game logic", "Grid systems"],
     links: [{ label: "Placeholder", href: "#projects" }],
     summary:
-      "A placeholder for a strategy game concept that will become public once the gameplay, visuals, and deployment are ready.",
+      "A placeholder for a strategy game project that is not public yet.",
     problem:
-      "This slot represents a future strategy game project. It is intentionally framed as in-progress so the portfolio can show direction without overstating a launch.",
+      "This project is still in progress, so the portfolio lists it without presenting it as a finished release.",
     built:
-      "The detail page reserves space for the eventual public version: gameplay summary, screenshots, repo link, and demo link.",
+      "This page will be updated with the repo, demo, screenshots, and gameplay details when the project is ready.",
     highlights: [
-      "Clearly marked as coming soon for recruiter-facing honesty.",
-      "Keeps the portfolio forward-looking without claiming a finished release.",
-      "Ready to replace with real gameplay details when the project is public.",
+      "Marked as coming soon.",
+      "Included without claiming a public launch.",
+      "Ready to replace with real details later.",
     ],
     screenshots: ["Map concept", "Turn planning", "Match summary"],
   },
@@ -167,9 +167,9 @@ function Hero() {
       <div className="hero-grid">
         <section className="hero-copy" aria-labelledby="hero-title">
           <p className="eyebrow">Rutgers CS student / U.S. Army Reserve Sergeant</p>
-          <h1 id="hero-title">I build practical software for real workflows.</h1>
+          <h1 id="hero-title">Software projects by Akash Saha.</h1>
           <p className="hero-summary">
-            I am a computer science student at Rutgers with experience across AI-assisted tools, desktop apps, browser extensions, data dashboards, and game prototypes. My background as an Army Sergeant and civil engineering intern shapes how I approach software: structured, accountable, and focused on useful systems.
+            I am a computer science student at Rutgers. I build desktop apps, AI tools, browser extensions, dashboards, and game prototypes. I am also a U.S. Army Reserve Sergeant and previously worked as a civil engineering intern.
           </p>
           <div className="hero-actions">
             <ExternalLink href={profile.github} variant="primary">GitHub</ExternalLink>
@@ -184,9 +184,9 @@ function Hero() {
           </div>
           <div>
             <p className="panel-kicker">Current focus</p>
-            <h2>Software that organizes messy real-life systems.</h2>
+            <h2>Computer science student building practical tools.</h2>
             <p>
-              I like building tools that connect interface, data, and daily use: planners, analytics, logging workflows, extensions, and local-first apps.
+              This site highlights projects from my GitHub, including EverythingApp, GymLLM, PhotoLog Analytics, Scratch Paper, and conquest.io.
             </p>
           </div>
           <div className="signal-grid" aria-label="Profile signals">
@@ -237,7 +237,7 @@ function Projects() {
     <section id="projects" className="section">
       <div className="section-heading">
         <p className="eyebrow">Selected work</p>
-        <h2>Projects with real workflows behind them.</h2>
+        <h2>Selected projects.</h2>
       </div>
       <div className="project-grid">
         {projects.map((project, index) => (
@@ -253,23 +253,23 @@ function Background() {
     <section id="background" className="section background-section">
       <div className="section-heading">
         <p className="eyebrow">Background</p>
-        <h2>Technical work shaped by computer science, service, and field experience.</h2>
+        <h2>Background.</h2>
       </div>
       <div className="background-grid">
         <article>
           <span>01</span>
           <h3>Computer Science at Rutgers</h3>
-          <p>Building a foundation in software engineering, systems, data, algorithms, and practical application development.</p>
+          <p>Studying computer science with a focus on software, data, systems, and practical application development.</p>
         </article>
         <article>
           <span>02</span>
           <h3>Civil engineering internship</h3>
-          <p>Experience with real-world constraints, coordination, and technical judgment that carries into how I design software.</p>
+          <p>Worked in a civil engineering internship, gaining experience with technical work, coordination, and project constraints.</p>
         </article>
         <article>
           <span>03</span>
           <h3>Sergeant, U.S. Army Reserve</h3>
-          <p>Leadership experience built around accountability, communication, execution, and working under pressure.</p>
+          <p>Serve as a Sergeant in the U.S. Army Reserve, with experience in leadership, accountability, and communication.</p>
         </article>
       </div>
     </section>
@@ -281,7 +281,7 @@ function Footer() {
     <footer id="contact" className="footer">
       <div>
         <p className="eyebrow">Contact</p>
-        <h2>Open to software internships and project conversations.</h2>
+        <h2>Open to software internships.</h2>
       </div>
       <div className="footer-actions">
         <ExternalLink href={profile.github} variant="primary">GitHub</ExternalLink>
@@ -369,7 +369,7 @@ function ProjectDetailPage() {
       <section className="detail-section gallery-section">
         <div className="section-heading">
           <p className="eyebrow">Screenshots</p>
-          <h2>Placeholder gallery for the first version.</h2>
+          <h2>Screenshot placeholders.</h2>
         </div>
         <div className="screenshot-grid">
           {project.screenshots.map((label) => (
