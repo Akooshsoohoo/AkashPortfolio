@@ -99,6 +99,7 @@ function ProjectApp() {
   const [slug, setSlug] = pS(getSlug());
   const [heroHov, setHeroHov] = pS(false);
   const [lightbox, setLightbox] = pS(null);
+  const mob = useIsMobile();
 
   pE(() => {
     const onPop = () => setSlug(getSlug());
@@ -133,7 +134,7 @@ function ProjectApp() {
     <React.Fragment>
       {/* topbar */}
       <header style={{
-        padding: "24px 48px",
+        padding: mob ? "16px 20px" : "24px 48px",
         borderBottom: "1px solid var(--line)",
         display: "flex",
         justifyContent: "space-between",
@@ -163,7 +164,7 @@ function ProjectApp() {
 
       {/* hero */}
       <section style={{
-        padding: "72px 48px 56px",
+        padding: mob ? "40px 20px 40px" : "72px 48px 56px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
@@ -184,7 +185,7 @@ function ProjectApp() {
           margin: "20px 0 28px",
           fontFamily: "var(--sans)",
           fontWeight: 600,
-          fontSize: "clamp(56px, 9vw, 132px)",
+          fontSize: mob ? "clamp(44px, 13vw, 80px)" : "clamp(56px, 9vw, 132px)",
           lineHeight: 0.95,
           letterSpacing: "-0.04em",
         }}>
@@ -274,7 +275,7 @@ function ProjectApp() {
 
       {/* hero shot */}
       <section style={{
-        padding: "0 48px 80px",
+        padding: mob ? "0 20px 48px" : "0 48px 80px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
@@ -306,7 +307,7 @@ function ProjectApp() {
 
       {/* body sections */}
       <section style={{
-        padding: "0 48px 80px",
+        padding: mob ? "0 20px 48px" : "0 48px 80px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
@@ -315,9 +316,9 @@ function ProjectApp() {
         {(d.sections || []).map((s, i) => (
           <Reveal key={s.h} delay={i * 80} style={{
             display: "grid",
-            gridTemplateColumns: "240px minmax(0, 1fr)",
-            gap: 64,
-            padding: "56px 0",
+            gridTemplateColumns: mob ? "1fr" : "240px minmax(0, 1fr)",
+            gap: mob ? 16 : 64,
+            padding: mob ? "36px 0" : "56px 0",
             borderBottom: "1px solid var(--line)",
             alignItems: "start",
           }}>
@@ -351,7 +352,7 @@ function ProjectApp() {
 
       {/* secondary shots */}
       <section style={{
-        padding: "0 48px 96px",
+        padding: mob ? "0 20px 64px" : "0 48px 96px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
@@ -405,13 +406,13 @@ function ProjectApp() {
 
       {/* prev / next */}
       <section style={{
-        padding: "48px 48px 24px",
+        padding: mob ? "32px 20px 16px" : "48px 48px 24px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
         borderTop: "1px solid var(--line)",
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: mob ? "1fr" : "1fr 1fr",
         gap: 1,
       }}>
         <PrevNext p={prev} dir="prev" />
@@ -419,7 +420,7 @@ function ProjectApp() {
       </section>
 
       <footer style={{
-        padding: "20px 48px 40px",
+        padding: mob ? "16px 20px 32px" : "20px 48px 40px",
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",

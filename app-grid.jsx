@@ -2,18 +2,20 @@
 const { useState: gS, useEffect: gE, useRef: gR } = React;
 
 function GHero() {
+  const mob = useIsMobile();
   return (
     <header style={{
-      padding: "32px 48px 64px",
+      padding: mob ? "20px 20px 40px" : "32px 48px 64px",
       borderBottom: "1px solid var(--line)",
     }}>
       {/* topbar */}
       <div style={{
-        display: "grid", gridTemplateColumns: "1fr auto 1fr",
+        display: "grid",
+        gridTemplateColumns: mob ? "1fr auto" : "1fr auto 1fr",
         alignItems: "center", gap: 24,
         fontFamily: "var(--mono)", fontSize: 12,
         color: "var(--muted)",
-        marginBottom: 80,
+        marginBottom: mob ? 40 : 80,
       }}>
         <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
           <span style={{
@@ -21,22 +23,24 @@ function GHero() {
             background: "var(--accent)",
           }} />
           <span style={{ color: "var(--fg)" }}>akash-saha</span>
-          <span>~/portfolio</span>
+          {!mob && <span>~/portfolio</span>}
         </div>
-        <nav style={{ display: "flex", gap: 24, fontSize: 13 }}>
+        <nav style={{ display: "flex", gap: mob ? 16 : 24, fontSize: 13 }}>
           <a href="#projects" style={{ color: "var(--muted)" }}>./projects</a>
           <a href="#contact" style={{ color: "var(--muted)" }}>./contact</a>
         </nav>
-        <div style={{ textAlign: "right" }}>
-          <span>{PROFILE.location}</span>
-        </div>
+        {!mob && (
+          <div style={{ textAlign: "right" }}>
+            <span>{PROFILE.location}</span>
+          </div>
+        )}
       </div>
 
-      {/* hero grid — text left, headshot pulled into center of the right gap */}
+      {/* hero grid */}
       <div style={{
         display: "grid",
-        gridTemplateColumns: "minmax(0, 3fr) minmax(0, 2fr)",
-        gap: 48,
+        gridTemplateColumns: mob ? "1fr" : "minmax(0, 3fr) minmax(0, 2fr)",
+        gap: mob ? 32 : 48,
         alignItems: "center",
       }}>
         <div style={{ minWidth: 0 }}>
@@ -53,7 +57,7 @@ function GHero() {
             margin: 0,
             fontFamily: "var(--sans)",
             fontWeight: 600,
-            fontSize: "clamp(56px, 8.5vw, 128px)",
+            fontSize: mob ? "clamp(48px, 13vw, 80px)" : "clamp(56px, 8.5vw, 128px)",
             lineHeight: 0.95,
             letterSpacing: "-0.04em",
             color: "var(--fg)",
@@ -62,37 +66,36 @@ function GHero() {
           </Reveal>
 
           <Reveal as="p" delay={360} style={{
-            margin: "32px 0 0",
+            margin: "24px 0 0",
             fontFamily: "var(--sans)",
-            fontSize: 20,
+            fontSize: mob ? 16 : 20,
             lineHeight: 1.6,
             color: "var(--fg)",
-            maxWidth: "62ch",
+            maxWidth: mob ? "100%" : "62ch",
             opacity: 0.9,
           }}>
             Computer science student at Rutgers University with experience developing web applications, dashboards, browser extensions, and data-focused software projects. Background includes leadership experience as a Sergeant in the United States Army Reserve and prior work as a civil engineering intern supporting large-scale infrastructure projects.
           </Reveal>
-
         </div>
 
-        {/* headshot — square, accent border */}
+        {/* headshot */}
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-        <Reveal delay={300} style={{
-          width: "clamp(240px, 22vw, 320px)",
-          height: "clamp(240px, 22vw, 320px)",
-          position: "relative",
-          border: "2px solid rgba(224, 138, 60, 0.55)",
-          background: "var(--panel)",
-          overflow: "hidden",
-          lineHeight: 0,
-          flexShrink: 0,
-        }}>
-          <img
-            src="headshot.jpg"
-            alt="Akash Saha"
-            style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 10%", transform: "scale(1.35)", transformOrigin: "center 10%" }}
-          />
-        </Reveal>
+          <Reveal delay={300} style={{
+            width: mob ? "clamp(160px, 55vw, 240px)" : "clamp(240px, 22vw, 320px)",
+            height: mob ? "clamp(160px, 55vw, 240px)" : "clamp(240px, 22vw, 320px)",
+            position: "relative",
+            border: "2px solid rgba(224, 138, 60, 0.55)",
+            background: "var(--panel)",
+            overflow: "hidden",
+            lineHeight: 0,
+            flexShrink: 0,
+          }}>
+            <img
+              src="headshot.jpg"
+              alt="Akash Saha"
+              style={{ display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 10%", transform: "scale(1.35)", transformOrigin: "center 10%" }}
+            />
+          </Reveal>
         </div>
       </div>
     </header>
@@ -234,9 +237,10 @@ function GCard({ p, i }) {
 }
 
 function GProjects() {
+  const mob = useIsMobile();
   return (
     <section id="projects" style={{
-      padding: "72px 80px 80px",
+      padding: mob ? "48px 20px 56px" : "72px 80px 80px",
     }}>
       <div style={{
         display: "flex",
@@ -248,7 +252,7 @@ function GProjects() {
           margin: 0,
           fontFamily: "var(--sans)",
           fontWeight: 600,
-          fontSize: 36,
+          fontSize: mob ? 28 : 36,
           letterSpacing: "-0.02em",
         }}>Projects</h2>
         <span style={{
@@ -259,7 +263,7 @@ function GProjects() {
 
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+        gridTemplateColumns: mob ? "1fr" : "repeat(2, minmax(0, 1fr))",
         gap: 24,
       }}>
         {PROJECTS.map((p, i) => (
@@ -271,15 +275,16 @@ function GProjects() {
 }
 
 function GContact() {
+  const mob = useIsMobile();
   return (
     <section id="contact" style={{
-      padding: "60px 48px 32px",
+      padding: mob ? "40px 20px 24px" : "60px 48px 32px",
       borderTop: "1px solid var(--line)",
     }}>
       <div style={{
         display: "grid",
-        gridTemplateColumns: "1fr 2fr",
-        gap: 64,
+        gridTemplateColumns: mob ? "1fr" : "1fr 2fr",
+        gap: mob ? 32 : 64,
         alignItems: "start",
       }}>
         <div>
@@ -287,7 +292,7 @@ function GContact() {
             margin: 0,
             fontFamily: "var(--sans)",
             fontWeight: 600,
-            fontSize: 36,
+            fontSize: mob ? 28 : 36,
             letterSpacing: "-0.02em",
           }}>Contact</h2>
           <p style={{

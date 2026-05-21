@@ -186,6 +186,19 @@ function Cursor({ mode }) {
 }
 
 // ---------- in-view trigger ----------
+function useIsMobile(breakpoint = 768) {
+  const [mob, setMob] = useState(
+    typeof window !== "undefined" && window.innerWidth <= breakpoint
+  );
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
+    const handler = (e) => setMob(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+  return mob;
+}
+
 function useInView(opts = { threshold: 0.15 }) {
   const ref = useRef(null);
   const [seen, setSeen] = useState(false);
@@ -256,5 +269,5 @@ function hexA(hex, a) {
 
 Object.assign(window, {
   PROJECTS, PROFILE,
-  Cursor, useInView, Reveal, PreviewSlot, hexA,
+  Cursor, useIsMobile, useInView, Reveal, PreviewSlot, hexA,
 });
