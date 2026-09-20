@@ -103,7 +103,7 @@ function GHero() {
 }
 
 // ---------- project card ----------
-function GCard({ p, i }) {
+function GCard({ p, i, style = {} }) {
   const [hov, setHov] = gS(false);
   return (
     <a
@@ -121,6 +121,7 @@ function GCard({ p, i }) {
         transform: hov ? "translateY(-3px)" : "translateY(0)",
         color: "inherit",
         textDecoration: "none",
+        ...style,
       }}
     >
       {/* image */}
@@ -266,9 +267,18 @@ function GProjects() {
         gridTemplateColumns: mob ? "1fr" : "repeat(2, minmax(0, 1fr))",
         gap: 24,
       }}>
-        {PROJECTS.map((p, i) => (
-          <GCard key={p.slug} p={p} i={i} />
-        ))}
+        {PROJECTS.map((p, i) => {
+          // With an odd count on the 2-column grid, center the last card at the same width as the rest
+          const orphan = !mob && PROJECTS.length % 2 === 1 && i === PROJECTS.length - 1;
+          return (
+            <GCard
+              key={p.slug}
+              p={p}
+              i={i}
+              style={orphan ? { gridColumn: "1 / -1", justifySelf: "center", width: "calc(50% - 12px)" } : {}}
+            />
+          );
+        })}
       </div>
     </section>
   );

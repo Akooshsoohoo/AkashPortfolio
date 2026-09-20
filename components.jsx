@@ -126,7 +126,7 @@ const PROJECTS = [
     accent: "#e0c46a",
     shots: ["Popup", "Pages", "Settings"],
     imgs: {
-      thumb: "scratchpaperpics/unnamed (3).png",
+      thumb: "scratchpaperpics/unnamed.png",
       hero: "scratchpaperpics/Screenshot 2026-05-21 184914.png",
       gallery: [
         "scratchpaperpics/unnamed.png",
