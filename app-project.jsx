@@ -13,31 +13,51 @@ function projectIndex(slug) {
 
 // extra copy per project — overview, role, problem, approach, outcome
 const DETAIL = {
-  everythingapp: {
-    tagline: "A desktop shell that combines planning, timers, notes, and session stats into one window.",
-    period: "April 2026 — ongoing",
+  easybillsplitting: {
+    tagline: "A bill splitter for shared items, tax, tip, and discounts. It runs entirely in the browser.",
+    period: "Aug 2026 — ongoing",
     role: "Solo build · design + engineering",
-    stack: ["Tauri", "React", "TypeScript", "SQLite", "Zustand", "Vite"],
+    stack: ["React", "Vite", "React Router", "Vercel"],
     sections: [
       {
         h: "Why",
-        p: "I was switching between several separate apps to manage a single work session — a to-do list, a timer, a notes app, and a habit tracker. The overhead added up, so I built one local desktop app that covers all of it.",
+        p: "Splitting a restaurant bill is easy until people share appetizers and the tax, tip, and a coupon all need to be divided fairly. Most tools either split evenly or make you enter everything on a tiny screen. I wanted one that works well on a phone at the table.",
       },
       {
         h: "How",
-        p: "Modular architecture — each tool (timer, planner, notes, stats) is a self-contained module that mounts into the shell. State is centralized in a Zustand store and persisted to SQLite. Global shortcuts allow triggering common actions without switching windows.",
+        p: "Client-side React with no backend or accounts. You can split evenly, or by item: add items, tax, tip, and discounts, then assign items to people by dragging them or tapping. Pointer events keep drag and drop working on touch screens. Tip is split proportionally by default, with an option to split it evenly. Finished splits can be exported as an image card and are saved to the browser's local storage.",
       },
       {
         h: "Outcome",
-        p: "In daily use since April 2026. Covers planning, timing, notes, and session tracking in a single window without switching between apps.",
+        p: "Live on its own domain and hosted on Vercel. It has an even-split mode, a by-item mode, a shareable breakdown, and a history page, plus guide, FAQ, and policy pages.",
+      },
+    ],
+  },
+  everythingapp: {
+    tagline: "A productivity app that combines daily planning, focus timers, notes, and session stats in one window.",
+    period: "April 2026 — ongoing",
+    role: "Solo build · design + engineering",
+    stack: ["Tauri", "React", "TypeScript", "Supabase", "SQLite", "Zustand"],
+    sections: [
+      {
+        h: "Why",
+        p: "I was switching between several separate apps to manage a single work session — a to-do list, a timer, a notes app, and a habit tracker. The overhead added up, so I built one app that covers all of it.",
+      },
+      {
+        h: "How",
+        p: "Modular architecture — each tool (timer, planner, notes, stats) is a self-contained module that mounts into the shell. State is centralized in a Zustand store, cached locally in SQLite, and synced to Supabase after Google sign-in. It runs as a Tauri desktop app and as a web app.",
+      },
+      {
+        h: "Outcome",
+        p: "In daily use since April 2026. Covers planning, timing, notes, and session tracking in a single window. Redesigned in September 2026.",
       },
     ],
   },
   gymllm: {
-    tagline: "A workout logger that accepts plain-English input and parses it into structured exercise records.",
+    tagline: "A workout logger that accepts plain-English input and parses it into structured lifts, cardio, and body weight.",
     period: "May 2025 — ongoing",
     role: "Solo build · backend-heavy",
-    stack: ["Python", "Flask", "OpenAI API", "Pandas", "CSV", "SQLite"],
+    stack: ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
     sections: [
       {
         h: "Why",
@@ -45,11 +65,11 @@ const DETAIL = {
       },
       {
         h: "How",
-        p: "Free-text input is sent to GPT-4o-mini with a strict schema prompt. The response is normalized against a local exercise catalog so variations of the same exercise resolve to the same ID. A review step allows corrections before saving.",
+        p: "Free-text input is sent to an LLM with a strict schema prompt, and the response is normalized so variations of the same exercise resolve to the same entry. The provider is configurable: hosted models (OpenAI, Anthropic, Gemini, Groq) or a local Ollama or LM Studio model called straight from the browser. A review step allows corrections before saving. Users sign in with Google and only see their own entries.",
       },
       {
         h: "Outcome",
-        p: "Cuts down the manual input required to log a workout. Input is parsed, reviewed, and saved in a few steps. All data is stored locally on disk.",
+        p: "Cuts down the manual input required to log a workout. A Progress section charts exercises, cardio, and body weight by day, week, or month, with per-exercise trends and personal records. Each day has its own page with a shareable image.",
       },
     ],
   },
@@ -217,7 +237,7 @@ function ProjectApp() {
             ["Period", d.period || p.year],
             ["Role", d.role || p.role],
             ["Stack", (d.stack || p.stack).slice(0, 4).join(" · ")],
-            ["Status", p.links[0]?.label === "Live demo" ? "Live" : "Shipped"],
+            ["Status", /^Live/.test(p.links[0]?.label || "") ? "Live" : "Shipped"],
           ].map(([k, v]) => (
             <div key={k} style={{
               padding: "18px 22px",

@@ -5,16 +5,43 @@ const { useState, useEffect, useRef, useLayoutEffect, useCallback, useMemo } = R
 const PROJECTS = [
   {
     n: "01",
+    slug: "easybillsplitting",
+    title: "EasyBillSplitting",
+    year: "2026",
+    role: "Web app",
+    blurb: "A bill splitter that handles shared items, tax, tip, and discounts. Runs entirely in the browser.",
+    long:
+      "Split a bill evenly, or by item with tax, tip, and discounts. Items are assigned to people by drag and drop, including on touch screens. There are no accounts and no backend, and past splits are saved in the browser.",
+    stack: ["React", "Vite", "React Router", "Vercel"],
+    // TODO: add { label: "GitHub", href: "https://github.com/Akooshsoohoo/easybillsplitting" } once the repo is public
+    links: [
+      { label: "Live site", href: "https://www.easybillsplitting.com" },
+    ],
+    siteHref: "https://www.easybillsplitting.com",
+    accent: "#40dca5",
+    shots: ["Split evenly", "Assign items", "Results"],
+    imgs: {
+      thumb: "easybillsplittingpics/easybillsplittingthumb.png",
+      hero: "easybillsplittingpics/easybillsplittinghero.png",
+      gallery: [
+        "easybillsplittingpics/easybillsplittingeven.png",
+        "easybillsplittingpics/easybillsplittingassign.png",
+        "easybillsplittingpics/easybillsplittingresults.png",
+      ],
+    },
+  },
+  {
+    n: "02",
     slug: "everythingapp",
     title: "EverythingApp",
     year: "2026",
-    role: "Desktop app",
-    blurb: "A local desktop app that bundles planning, timers, notes, and stats into one window.",
+    role: "Desktop + web app",
+    blurb: "A productivity app that puts planning, focus timers, notes, and stats in one window.",
     long:
-      "A desktop productivity app for planning, timers, notes, and stats. Built with a modular shell so new tools can be added without changing the core. Uses SQLite for local storage and supports global shortcuts.",
-    stack: ["Tauri", "React", "TypeScript", "SQLite", "Zustand"],
+      "A productivity app for daily planning, focus timers, notes, and session stats. Built with a modular shell so new tools can be added without changing the core. Runs as a Tauri desktop app and on the web, with a local SQLite cache and Supabase sync.",
+    stack: ["Tauri", "React", "TypeScript", "Supabase", "Zustand"],
     links: [
-      { label: "Install", href: "https://github.com/Akooshsoohoo/EverythingApp/releases/tag/v0.1.30" },
+      { label: "Install", href: "https://github.com/Akooshsoohoo/EverythingApp/releases/latest" },
       { label: "Website", href: "https://everything-app-rose.vercel.app/" },
     ],
     siteHref: "https://everything-app-rose.vercel.app/",
@@ -31,33 +58,33 @@ const PROJECTS = [
     },
   },
   {
-    n: "02",
+    n: "03",
     slug: "gymllm",
     title: "GymLLM",
     year: "2025",
     role: "Workout logger",
-    blurb: "A workout logger that turns plain-English notes into structured workout data.",
+    blurb: "A workout logger that turns plain-English notes into structured workout data and progress charts.",
     long:
-      "A Flask app that parses workout notes written in plain English, normalizes exercises against a local catalog, and shows a review step before saving. All data stays on disk.",
-    stack: ["Python", "Flask", "OpenAI API", "Pandas", "CSV"],
+      "A Flask app that parses workout notes written in plain English, shows a review step before saving, and charts lifts, cardio, and body weight over time. Works with several LLM providers, including local models. Sign-in is through Google.",
+    stack: ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
     links: [
       { label: "Live demo", href: "https://gymllm.onrender.com/" },
       { label: "GitHub", href: "https://github.com/Akooshsoohoo/GymLLM" },
     ],
     accent: "#e07a6c",
-    shots: ["Entry", "Review", "History"],
+    shots: ["Entry", "Review", "Progress"],
     imgs: {
-      thumb: "gymllmpics/gymllmstartscreen.png",
-      hero: "gymllmpics/gymllmstartup.png",
+      thumb: "gymllmpics/gymllmthumb.png",
+      hero: "gymllmpics/gymllmhero.png",
       gallery: [
-        "gymllmpics/gymllmexampleprompt.png",
-        "gymllmpics/gymllmreviewandconfimworkout.png",
-        "gymllmpics/gymllmsearchview.png",
+        "gymllmpics/gymllmentry.png",
+        "gymllmpics/gymllmreview.png",
+        "gymllmpics/gymllmprogress.png",
       ],
     },
   },
   {
-    n: "03",
+    n: "04",
     slug: "photolog",
     title: "PhotoLog Analytics",
     year: "2026",
@@ -84,7 +111,7 @@ const PROJECTS = [
     },
   },
   {
-    n: "04",
+    n: "05",
     slug: "scratch",
     title: "Scratch Paper",
     year: "2024",
