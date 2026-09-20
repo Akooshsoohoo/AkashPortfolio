@@ -13,9 +13,9 @@ const PROJECTS = [
     long:
       "Split a bill evenly, or by item with tax, tip, and discounts. Items are assigned to people by drag and drop, including on touch screens. There are no accounts and no backend, and past splits are saved in the browser.",
     stack: ["React", "Vite", "React Router", "Vercel"],
-    // TODO: add { label: "GitHub", href: "https://github.com/Akooshsoohoo/easybillsplitting" } once the repo is public
     links: [
       { label: "Live site", href: "https://www.easybillsplitting.com" },
+      { label: "GitHub", href: "https://github.com/Akooshsoohoo/easybillsplitting" },
     ],
     siteHref: "https://www.easybillsplitting.com",
     accent: "#40dca5",
@@ -41,19 +41,18 @@ const PROJECTS = [
       "A productivity app for daily planning, focus timers, notes, and session stats. Built with a modular shell so new tools can be added without changing the core. Runs as a Tauri desktop app and on the web, with a local SQLite cache and Supabase sync.",
     stack: ["Tauri", "React", "TypeScript", "Supabase", "Zustand"],
     links: [
-      { label: "Install", href: "https://github.com/Akooshsoohoo/EverythingApp/releases/latest" },
       { label: "Website", href: "https://everything-app-rose.vercel.app/" },
     ],
     siteHref: "https://everything-app-rose.vercel.app/",
     accent: "#9bd6b3",
-    shots: ["Command center", "Timer", "Modules"],
+    shots: ["Today", "Focus timer", "Stats"],
     imgs: {
-      thumb: "everythingapp pics/Screenshot 2026-05-21 184443.png",
-      hero: "everythingapp pics/Screenshot 2026-05-21 184513.png",
+      thumb: "everythingapp pics/everythingappthumb.png",
+      hero: "everythingapp pics/everythingapphero.png",
       gallery: [
-        "everythingapp pics/Screenshot 2026-05-21 184443.png",
-        "everythingapp pics/Screenshot 2026-05-21 184726.png",
-        "everythingapp pics/Screenshot 2026-05-21 184646.png",
+        "everythingapp pics/everythingapptoday.png",
+        "everythingapp pics/everythingapptimer.png",
+        "everythingapp pics/everythingappstats.png",
       ],
     },
   },
