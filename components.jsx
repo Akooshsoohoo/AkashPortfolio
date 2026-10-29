@@ -2,6 +2,7 @@
 const { useState, useEffect, useRef, useLayoutEffect, useCallback, useMemo } = React;
 
 // ---------- data ----------
+// <career-hub:begin> generated from career-hub/data/profile.yaml — edit there, not here
 const PROJECTS = [
   {
     n: "01",
@@ -10,8 +11,7 @@ const PROJECTS = [
     year: "2026",
     role: "Web app",
     blurb: "A bill splitter that handles shared items, tax, tip, and discounts. Runs entirely in the browser.",
-    long:
-      "Split a bill evenly, or by item with tax, tip, and discounts. Items are assigned to people by drag and drop, including on touch screens. There are no accounts and no backend, and past splits are saved in the browser.",
+    long: "Split a bill evenly, or by item with tax, tip, and discounts. Items are assigned to people by drag and drop, including on touch screens. There are no accounts and no backend, and past splits are saved in the browser.",
     stack: ["React", "Vite", "React Router", "Vercel"],
     links: [
       { label: "Live site", href: "https://www.easybillsplitting.com" },
@@ -33,17 +33,16 @@ const PROJECTS = [
   {
     n: "02",
     slug: "everythingapp",
-    title: "EverythingApp",
+    title: "SidePlaza",
     year: "2026",
     role: "Desktop + web app",
     blurb: "A productivity app that puts planning, focus timers, notes, and stats in one window.",
-    long:
-      "A productivity app for daily planning, focus timers, notes, and session stats. Built with a modular shell so new tools can be added without changing the core. Runs as a Tauri desktop app and on the web, with a local SQLite cache and Supabase sync.",
+    long: "A productivity app for daily planning, focus timers, notes, and session stats. Built with a modular shell so new tools can be added without changing the core. Runs as a Tauri desktop app and on the web, with a local SQLite cache and Supabase sync.",
     stack: ["Tauri", "React", "TypeScript", "Supabase", "Zustand"],
     links: [
-      { label: "Website", href: "https://everything-app-rose.vercel.app/" },
+      { label: "Website", href: "https://sideplaza.com/" },
     ],
-    siteHref: "https://everything-app-rose.vercel.app/",
+    siteHref: "https://sideplaza.com/",
     accent: "#9bd6b3",
     shots: ["Today", "Focus timer", "Stats"],
     imgs: {
@@ -59,17 +58,17 @@ const PROJECTS = [
   {
     n: "03",
     slug: "gymllm",
-    title: "GymLLM",
+    title: "Levra",
     year: "2025",
     role: "Workout logger",
     blurb: "A workout logger that turns plain-English notes into structured workout data and progress charts.",
-    long:
-      "A Flask app that parses workout notes written in plain English, shows a review step before saving, and charts lifts, cardio, and body weight over time. Works with several LLM providers, including local models. Sign-in is through Google.",
+    long: "A Flask app that parses workout notes written in plain English, shows a review step before saving, and charts lifts, cardio, and body weight over time. Works with several LLM providers, including local models. Sign-in is through Google.",
     stack: ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
     links: [
-      { label: "Live demo", href: "https://gymllm.onrender.com/" },
+      { label: "Website", href: "https://levraapp.com/" },
       { label: "GitHub", href: "https://github.com/Akooshsoohoo/GymLLM" },
     ],
+    siteHref: "https://levraapp.com/",
     accent: "#e07a6c",
     shots: ["Entry", "Review", "Progress"],
     imgs: {
@@ -89,8 +88,7 @@ const PROJECTS = [
     year: "2026",
     role: "Dashboard",
     blurb: "A dashboard for Google Photos Takeout metadata with charts and clustering.",
-    long:
-      "Loads Google Photos JSON sidecars into SQLite, then exposes them through SQL queries, time charts, and basic clustering. Built as a Flask dashboard with a live demo.",
+    long: "Loads Google Photos JSON sidecars into SQLite, then exposes them through SQL queries, time charts, and basic clustering. Built as a Flask dashboard with a live demo.",
     stack: ["Python", "Flask", "SQLite", "Chart.js", "scikit-learn"],
     links: [
       { label: "Live demo", href: "https://photolog-analytics.onrender.com" },
@@ -116,11 +114,13 @@ const PROJECTS = [
     year: "2024",
     role: "Chrome extension",
     blurb: "A Chrome extension for quick notes with pages, autosave, and local storage.",
-    long:
-      "A browser extension popup for quick notes. Supports multiple pages, autosave, and a few customization options. All notes are stored locally in extension storage.",
+    long: "A browser extension popup for quick notes. Supports multiple pages, autosave, and a few customization options. All notes are stored locally in extension storage.",
     stack: ["JavaScript", "Chrome MV3", "HTML", "CSS"],
     links: [
-      { label: "Chrome Web Store", href: "https://chromewebstore.google.com/detail/scratch-paper/omlgcphcnbplaaiolgnpkdhdkgkjedel?hl=en" },
+      {
+        label: "Chrome Web Store",
+        href: "https://chromewebstore.google.com/detail/scratch-paper/omlgcphcnbplaaiolgnpkdhdkgkjedel?hl=en",
+      },
       { label: "GitHub", href: "https://github.com/Akooshsoohoo/Scratch-Paper-1.2" },
     ],
     accent: "#e0c46a",
@@ -146,6 +146,7 @@ const PROFILE = {
   email: "mailto:1sahakash1@gmail.com",
   location: "Hillsborough, NJ",
 };
+// <career-hub:end>
 
 // ---------- custom cursor ----------
 function Cursor({ mode }) {
