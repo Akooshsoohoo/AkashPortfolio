@@ -3,37 +3,112 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Akash Saha — Portfolio</title>
+<title>Akash Saha — Software Engineer &amp; Builder | Rutgers '26</title>
+<meta name="description" content="Portfolio of Akash Saha, Computer Science student at Rutgers University graduating Dec 2026. Explore full-stack web applications, developer tools, and data systems." />
+<meta name="author" content="Akash Saha" />
+<meta name="theme-color" content="#090a0f" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+
+<!-- Open Graph / Meta -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Akash Saha — Software Engineer &amp; Builder" />
+<meta property="og:description" content="Computer Science student at Rutgers University (Graduating Dec 2026). Explore featured projects in full-stack web, developer tools, and distributed applications." />
+<meta property="og:image" content="headshot.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Akash Saha — Software Engineer &amp; Builder" />
+<meta name="twitter:description" content="Computer Science student at Rutgers University (Graduating Dec 2026). Explore featured projects in full-stack web, developer tools, and distributed applications." />
+<meta name="twitter:image" content="headshot.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --bg: #0b0b0c;
-    --panel: #131316;
-    --fg: #ededee;
-    --muted: #7a7a82;
-    --line: rgba(237, 237, 238, 0.08);
-    --line-strong: rgba(237, 237, 238, 0.20);
-    --accent: #e08a3c;
-    --sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --bg: #090a0f;
+    --bg-subtle: #0f121d;
+    --panel: #131724;
+    --panel-card: #141826;
+    --panel-hover: #191f32;
+    --panel-elevated: #1a2034;
+    --fg: #f8fafc;
+    --fg-secondary: #cbd5e1;
+    --fg-muted: #94a3b8;
+    --fg-dim: #64748b;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --line-highlight: rgba(255, 255, 255, 0.28);
+    --accent: #38bdf8;
+    --accent-rgb: 56, 189, 248;
+    --accent-glow: rgba(56, 189, 248, 0.12);
+    --sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Monaco, Consolas, monospace;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+    --shadow-hover: 0 20px 40px -12px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.12);
   }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8fafc;
+      --bg-subtle: #f1f5f9;
+      --panel: #ffffff;
+      --panel-card: #ffffff;
+      --panel-hover: #f8fafc;
+      --panel-elevated: #ffffff;
+      --fg: #0f172a;
+      --fg-secondary: #334155;
+      --fg-muted: #64748b;
+      --fg-dim: #94a3b8;
+      --line: rgba(15, 23, 42, 0.08);
+      --line-strong: rgba(15, 23, 42, 0.16);
+      --line-highlight: rgba(15, 23, 42, 0.28);
+      --accent: #0284c7;
+      --accent-rgb: 2, 132, 199;
+      --accent-glow: rgba(2, 132, 199, 0.10);
+      --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
+      --shadow-hover: 0 16px 36px -4px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
+    }
+  }
+
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  html { background: var(--bg); }
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+  }
   body {
     background: var(--bg);
     color: var(--fg);
     font-family: var(--sans);
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+    line-height: 1.5;
   }
   a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--accent); color: #0b0b0c; }
-  #app { min-height: 100vh; }
+  button { font-family: inherit; }
+  ::selection { background: rgba(56, 189, 248, 0.35); color: var(--fg); }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  #app { min-height: 100vh; position: relative; }
 </style>
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
