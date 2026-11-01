@@ -60,10 +60,18 @@ const PROJECTS = [
     slug: "gymllm",
     title: "Levra",
     year: "2025",
-    role: "Workout logger",
-    blurb: "A workout logger that turns plain-English notes into structured workout data and progress charts.",
-    long: "A Flask app that parses workout notes written in plain English, shows a review step before saving, and charts lifts, cardio, and body weight over time. Works with several LLM providers, including local models. Sign-in is through Google.",
-    stack: ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
+    role: "iPhone app",
+    blurb: "An iPhone app that turns a workout typed in plain English into logged lifts, cardio, and body weight, with progress charts.",
+    long: "Type what you did, like \"benched 185 for 3 sets of 5, then ran 2 miles\", and Levra shows what it understood so you can fix anything before saving. Lifts, cardio, and body weight are charted from 7 days to all time. Friends see your lifts and cardio, never your notes or body weight. A native SwiftUI app on a Flask and PostgreSQL service.",
+    stack: [
+      "Swift",
+      "SwiftUI",
+      "Python",
+      "Flask",
+      "SQLAlchemy",
+      "PostgreSQL",
+      "Google OAuth",
+    ],
     links: [
       { label: "Website", href: "https://levraapp.com/" },
       { label: "GitHub", href: "https://github.com/Akooshsoohoo/GymLLM" },
@@ -72,12 +80,12 @@ const PROJECTS = [
     accent: "#e07a6c",
     shots: ["Entry", "Review", "Progress"],
     imgs: {
-      thumb: "gymllmpics/gymllmthumb.png",
-      hero: "gymllmpics/gymllmhero.png",
+      thumb: "levrapics/levrathumb.png",
+      hero: "levrapics/levrahero.png",
       gallery: [
-        "gymllmpics/gymllmentry.png",
-        "gymllmpics/gymllmreview.png",
-        "gymllmpics/gymllmprogress.png",
+        "levrapics/levralog.png",
+        "levrapics/levrareview.png",
+        "levrapics/levraprogress.png",
       ],
     },
   },
@@ -145,6 +153,81 @@ const PROFILE = {
   resume: "/Resume - Akash Saha.pdf",
   email: "mailto:1sahakash1@gmail.com",
   location: "Hillsborough, NJ",
+  intro: "Computer science student at Rutgers (graduating December 2026) and a sergeant in the U.S. Army Reserve. I build and ship my own software, mostly full-stack web apps and, more recently, an iPhone app.",
+  education: [
+    {
+      start: "2022-12",
+      end: "2026-12",
+      school: "Rutgers University",
+      degree: "B.S. Computer Science",
+      coursework: [
+        "Data Structures",
+        "Computer Architecture",
+        "Systems Programming",
+        "Software Methodology",
+      ],
+    },
+  ],
+  experience: [
+    {
+      start: "2026-06",
+      end: "2026-10",
+      org: "New Jersey Courts",
+      title: "Information Technology Intern",
+      location: "Trenton, NJ",
+      bullets: [
+        "Tested application changes and documented defects through resolution within a 20+ person team",
+        "Resolved software bugs in a Java/XHTML/JavaScript case management system, improving stability for users",
+      ],
+    },
+    {
+      start: "2025-06",
+      end: "2025-08",
+      org: "STV",
+      title: "Project Engineer Intern",
+      location: "Brooklyn, NY",
+      bullets: [
+        "Tracked 1,000+ assets in e-Builder for a $38.5M NYCHA upgrade and coordinated MEP punch list resolutions",
+        "Standardized closeout records across 1,000+ tracked assets to support regulatory compliance and project handover",
+        "Standardized closeout documentation and verified data consistency for regulatory compliance and system handover",
+      ],
+    },
+    {
+      start: "2022-06",
+      end: null,
+      org: "United States Army Reserve",
+      title: "Cargo Specialist",
+      location: "Staten Island, NY",
+      bullets: [
+        "Processed 50+ cargo movements using GATES and ICODES and trained 11+ soldiers on vessel loading procedures",
+        "Validated 400+ vehicle label records with 100% accuracy and maintained operational records for a 30+ soldier unit",
+      ],
+    },
+  ],
+  skills: {
+    languages: ["Python", "Java", "JavaScript", "C", "C#", "R", "SQL", "HTML/CSS"],
+    technologies: [
+      "Flask",
+      "SQLAlchemy",
+      "REST APIs",
+      "OAuth 2.0",
+      "Git",
+      "Linux",
+      "Azure",
+    ],
+    tools: [
+      "AutoCAD",
+      "SolidWorks",
+      "Technical Drawings",
+      "GitHub",
+      "E-Builder",
+    ],
+    certifications: [
+      "SST Supervisor (62-Hour)",
+      "SST Worker (40-Hour)",
+      "OSHA 30-Hour Construction",
+    ],
+  },
 };
 // <career-hub:end>
 

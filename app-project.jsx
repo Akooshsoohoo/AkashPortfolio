@@ -15,7 +15,7 @@ function projectIndex(slug) {
 const DETAIL = {
   easybillsplitting: {
     tagline: "A bill splitter for shared items, tax, tip, and discounts. It runs entirely in the browser.",
-    period: "Aug 2026 — ongoing",
+    period: "Jul 2026 — ongoing",
     role: "Solo build · design + engineering",
     stack: ["React", "Vite", "React Router", "Vercel"],
     sections: [
@@ -49,15 +49,16 @@ const DETAIL = {
       },
       {
         h: "Outcome",
-        p: "In daily use since April 2026. Covers planning, timing, notes, and session tracking in a single window. Redesigned in September 2026.",
+        p: "Covers daily planning, focus timers, notes, and session stats in a single window, with Spotify playback controls and Google Calendar integration. Available as a desktop app and on the web at sideplaza.com.",
       },
     ],
   },
   gymllm: {
-    tagline: "A workout logger that accepts plain-English input and parses it into structured lifts, cardio, and body weight.",
+    tagline: "An iPhone app that turns a workout typed in plain English into logged lifts, cardio, and body weight.",
     period: "May 2025 — ongoing",
-    role: "Solo build · backend-heavy",
-    stack: ["Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
+    role: "Solo build · iPhone app + backend",
+    status: "Awaiting App Store approval",
+    stack: ["Swift", "SwiftUI", "Python", "Flask", "SQLAlchemy", "PostgreSQL", "Google OAuth"],
     sections: [
       {
         h: "Why",
@@ -65,11 +66,11 @@ const DETAIL = {
       },
       {
         h: "How",
-        p: "Free-text input is sent to an LLM with a strict schema prompt, and the response is normalized so variations of the same exercise resolve to the same entry. The provider is configurable: hosted models (OpenAI, Anthropic, Gemini, Groq) or a local Ollama or LM Studio model called straight from the browser. A review step allows corrections before saving. Users sign in with Google and only see their own entries.",
+        p: "Free-text input is sent to a language model set up on the server, and the response is normalized so variations of the same exercise resolve to the same entry. A review step lets you correct what it understood before anything is saved. The iPhone app is native SwiftUI and talks to the Flask and PostgreSQL service that also runs the web version. Sign-in is with Google.",
       },
       {
         h: "Outcome",
-        p: "Cuts down the manual input required to log a workout. A Progress section charts exercises, cardio, and body weight by day, week, or month, with per-exercise trends and personal records. Each day has its own page with a shareable image.",
+        p: "Cuts down the manual input required to log a workout. A Progress section charts exercises, cardio, and body weight by day, week, or month, with per-exercise trends and personal records. Each day has its own page with a shareable image. Friends can see your lifts and cardio, never your notes or body weight.",
       },
     ],
   },
@@ -85,11 +86,11 @@ const DETAIL = {
       },
       {
         h: "How",
-        p: "A Python ingest script flattens the sidecar JSON into a normalized SQLite schema. Flask serves a dashboard with timeline charts (Chart.js) and KMeans clusters over geo and EXIF features (scikit-learn). The live demo runs on Render with sample data.",
+        p: "A Python ingest script flattens the sidecar JSON into a normalized SQLite schema. Flask serves a dashboard with yearly and hourly charts (Chart.js). scikit-learn runs regression, classification, and KMeans clustering over monthly photo counts. Built as a CS 210 final project; the live demo runs on Render with a pre-built dataset.",
       },
       {
         h: "Outcome",
-        p: "Surfaces photo volume trends by month, location clusters across multi-year ranges, and media type distributions. Includes a live demo running on Render with sample data.",
+        p: "Processes 20K+ photo metadata records, flags outliers with IQR, and shows yearly trends, hourly activity, and media insights in one dashboard. The live demo sleeps when idle, so the first load can take a minute.",
       },
     ],
   },
@@ -105,11 +106,11 @@ const DETAIL = {
       },
       {
         h: "How",
-        p: "Manifest V3 extension. The popup is a small HTML page with multi-page tabs, autosave on every keystroke (debounced 200ms), and chrome.storage.local for persistence. Includes optional dark mode and font-size controls.",
+        p: "Manifest V3 extension. The popup is a small HTML page with multi-page tabs, autosave shortly after you stop typing, and chrome.storage.local for persistence. Supports up to six notes, color themes, a default title and font, and optional Google Drive sync.",
       },
       {
         h: "Outcome",
-        p: "Published on the Chrome Web Store. Free to install, no account required, all notes stored locally in extension storage.",
+        p: "Published on the Chrome Web Store with 50+ active users. Notes are kept in extension storage, so nothing needs an account unless you turn on Drive sync.",
       },
     ],
   },
@@ -237,7 +238,7 @@ function ProjectApp() {
             ["Period", d.period || p.year],
             ["Role", d.role || p.role],
             ["Stack", (d.stack || p.stack).slice(0, 4).join(" · ")],
-            ["Status", /^Live/.test(p.links[0]?.label || "") ? "Live" : "Shipped"],
+            ["Status", d.status || (/^Live/.test(p.links[0]?.label || "") ? "Live" : "Shipped")],
           ].map(([k, v]) => (
             <div key={k} style={{
               padding: "18px 22px",

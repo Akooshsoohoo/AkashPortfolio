@@ -50,7 +50,7 @@ function GHero() {
             color: "var(--accent)",
           }} delay={100}>
             <span style={{ color: "var(--muted)" }}>{"// "}</span>
-            Computer science student · Rutgers '27
+            {"Computer science student · Rutgers · " + new Date(PROFILE.education[0].end + "-01T00:00").toLocaleString("en-US", { month: "short", year: "numeric" })}
           </Reveal>
 
           <Reveal as="h1" delay={200} style={{
@@ -74,7 +74,7 @@ function GHero() {
             maxWidth: mob ? "100%" : "62ch",
             opacity: 0.9,
           }}>
-            Computer science student at Rutgers University with experience developing web applications, dashboards, browser extensions, and data-focused software projects. Background includes leadership experience as a Sergeant in the United States Army Reserve and prior work as a civil engineering intern supporting large-scale infrastructure projects.
+            {PROFILE.intro}
           </Reveal>
         </div>
 
